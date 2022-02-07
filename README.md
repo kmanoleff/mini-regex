@@ -1,6 +1,7 @@
 # mini-regex
 
-This project is a mini-regex engine that will allow you to enter a search pattern along with text to be searched and it will return an array of pattern matches.
+This project is a mini-regex engine that will allow you to enter a search pattern along with text to be searched and it will return an array of pattern matches.  
+-- Author note : in `index.js` you will see my first attempt at pattern match (the deprecated function at the bottom) which worked for "cat" in "the dog sat on the cat" but I assumed "the cat" should also match so I re-wrote the function to be more extensible.
 
 # Getting Started
 
