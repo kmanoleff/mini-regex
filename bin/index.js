@@ -70,7 +70,7 @@ console.log(checkSearch(`${options.search}`, `${options.text}`));
 // this was my first attempt at checkWord() and it would split the string
 // into component words, i.e. the text.split(' ')
 // it would match the pattern "cat" on "cat in the hat" but I assumed that
-// the pattern "cat" should also match on "cathedral".
+// the pattern "the cat" should also match.
 // so I deprecated this function in favor of the one used above
 function _checkWord(search, text){
   let wordsInText = text.split(' ');
