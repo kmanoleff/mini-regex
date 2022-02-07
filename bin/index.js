@@ -20,8 +20,8 @@ function isCharacterEqual(search, text) {
   return search === text;
 }
 
-// now that characters can be compared, iterate through a word
-function isWordEqual(search, text){
+// now that characters can be compared, iterate through a chunk of text
+function isTextEqual(search, text){
   console.log(search);
   console.log(text);
   // start with true, change to false if a mismatch is met
@@ -36,8 +36,8 @@ function isWordEqual(search, text){
 }
 
 // use the first letter of the search pattern to start, if it can find
-// a match then extract the string (by length) and try to match the whole word
-function checkWord(search, text){
+// a match then extract the string (by length) and try to match the whole text
+function checkText(search, text){
   let firstCharInSearch = search[0];
   let charactersInText = text.split('');
   let indexedOn;
@@ -46,7 +46,7 @@ function checkWord(search, text){
     // possible match, check the word
     if(isCharacterEqual(search[0], charactersInText[i])){
       slicedText = text.slice(i, (i + search.length));
-      completeMatch = isWordEqual(search, slicedText);
+      completeMatch = isTextEqual(search, slicedText);
       // found a full word match
       if(completeMatch) break;
     }
@@ -58,7 +58,7 @@ function checkWord(search, text){
 function checkSearch(search, text){
   let alternations = search.split('|');
   for(let word of alternations){
-    let match = checkWord(word, text);
+    let match = checkText(word, text);
     if(match) resultSet.push(word);
   }
   return resultSet;
